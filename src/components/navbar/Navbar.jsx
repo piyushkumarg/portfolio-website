@@ -40,17 +40,25 @@ function Navbar() {
 
   return (
     <>
-      <div className="bg-gray-900 flex items-center justify-between h-[3.85rem] text-gray-200  lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0 z-50">
-        <div className="lg:text-3xl text-2xl font-medium font-carattere tracking-widest ">
-          Piyush
-        </div>
+      <nav className="bg-gray-900 flex items-center justify-between h-[3.85rem] text-gray-200  lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0 z-50">
+        <Link
+          to="/"
+          className="text-2xl font-medium font-carattere tracking-widest  "
+        >
+          <div className="flex gap-1 items-center ">
+            <img src="./logo.svg" alt="" className="w-[1.75rem]" />
+            iyush
+          </div>
+        </Link>
         <div className="lg:gap-4 gap-1 hidden md:flex">
           {navigation.map((nav) => (
             <Link
               to={nav.src}
               onClick={() => handleLinkClick(nav.id)}
-              className={`flex items-center justify-center p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg ${
-                nav.current ? "bg-gray-200 text-gray-800" : ""
+              className={`flex items-center justify-center p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110    duration-500 ${
+                nav.current
+                  ? "bg-gray-200 text-gray-800 hover:text-gray-800"
+                  : "hover:text-teal-300"
               }`}
               key={nav.id}
             >
@@ -66,7 +74,11 @@ function Navbar() {
                 <Link
                   to={nav.src}
                   onClick={() => handleLinkClick(nav.id)}
-                  className="flex items-center justify-center p-2 gap-1 cursor-pointer text-lg"
+                  className={`flex items-center justify-center ml-4 mr-4 p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110   hover:text-teal-300 duration-500 ${
+                    nav.current
+                      ? "bg-gray-200 text-gray-800 hover:text-gray-800"
+                      : ""
+                  }`}
                   key={nav.id}
                 >
                   <nav.icon />
@@ -87,7 +99,7 @@ function Navbar() {
             {open ? <ImCross /> : <GiHamburgerMenu />}
           </button>
         </div>
-      </div>
+      </nav>
     </>
   );
 }

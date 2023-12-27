@@ -5,10 +5,6 @@ import loadingAnimation from "./loadingAnim.json";
 function Resume() {
   const [isLoading, setLoading] = useState(true);
 
-  const handleLoad = () => {
-    setLoading(false);
-  };
-
   const handleDownload = () => {
     // Replace the file URL with your PDF file's URL
     const fileUrl =
@@ -38,12 +34,14 @@ function Resume() {
         </div>
       )}
       <div
-        className={`h-screen w-screen mt-16 md:w-1/2 ${isLoading ? "hidden" : ""}`}
+        className={`h-screen w-screen mt-16 md:w-1/2 ${
+          isLoading ? "hidden" : ""
+        }`}
       >
         <iframe
           src="https://drive.google.com/file/d/1sdEqUKCpT4wPIfuJAxWC3FGABGEjzVhM/preview"
           allow="autoplay"
-          onLoad={handleLoad}
+          onLoad={() => setLoading(false)}
           title="Resume PDF"
           className="h-full w-full"
         ></iframe>

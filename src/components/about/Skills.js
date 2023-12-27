@@ -1,4 +1,4 @@
-import { FaBootstrap, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaBootstrap, FaNodeJs, FaReact, FaStripe } from "react-icons/fa";
 import {
   SiC,
   SiCplusplus,
@@ -15,6 +15,7 @@ import {
   SiNextdotjs,
   SiPostgresql,
   SiPostman,
+  SiRedux,
   SiTailwindcss,
   SiVercel,
 } from "react-icons/si";
@@ -110,6 +111,11 @@ export const techSkills = [
       name: "Express.js",
       icon: SiExpress,
     },
+    {
+      id: 18,
+      name: "Redux",
+      icon: SiRedux,
+    }
 ];
 
 export const toolStacks = [
@@ -130,7 +136,7 @@ export const toolStacks = [
   },
   {
     id: 4,
-    name: "vercel",
+    name: "Vercel",
     icon: SiVercel ,
   },
   {
@@ -138,4 +144,9 @@ export const toolStacks = [
     name: "Netlify",
     icon: SiNetlify ,
   },
+  {
+    id:6,
+    name:"stripe",
+    icon: FaStripe
+  }
 ];

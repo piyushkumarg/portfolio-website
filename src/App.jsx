@@ -8,6 +8,7 @@ import Resume from "./components/resume/Resume";
 import ProjectPage from "./pages/ProjectPage";
 import BlogsPage from "./pages/BlogsPage";
 import PageNotFound from "./pages/PageNotFound";
+import { Helmet } from "react-helmet";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,9 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Helmet>
+        <title>Piyush Kumar | Portfolio</title>
+      </Helmet>
     </>
   );
 }
