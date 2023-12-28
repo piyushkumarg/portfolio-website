@@ -8,9 +8,11 @@ import Lottie from "lottie-react";
 import loadingAnimation from "./loadingAnim.json";
 import submitAnimation from "./submitAnim.json";
 import { Helmet } from "react-helmet";
-
 import { db } from "../../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
+import emailjs from "@emailjs/browser";
+
+const env = import.meta.env;
 
 function Contact() {
   const [isLoading, setLoading] = useState(true);
@@ -42,9 +44,25 @@ function Contact() {
   const userCollectionRef = collection(db, "contacted-user");
   const handleSubmit = async (values) => {
     try {
+      setfromLoad(true);
       //save data to fire store
-      setfromLoad(true)
       await addDoc(userCollectionRef, values);
+
+      //  Send email using EmailJS in the browser
+      const emailParams = {
+        from_name: values.name,
+        from_email: values.email,
+        from_mobile: values.mobile,
+        message: values.message,
+        // Add more parameters as needed based on your EmailJS template
+      };
+
+      await emailjs.send(
+        env.VITE_emailjs_serviceId,
+        env.VITE_emailjs_template_Id,
+        emailParams,
+        env.VITE_emailjs_publicKey
+      );
 
       //reset form and show/hide animation
       form.reset();
@@ -52,7 +70,7 @@ function Contact() {
       setTimeout(() => {
         setShowSubmitAnimation(false);
       }, 3000);
-      setfromLoad(false)
+      setfromLoad(false);
       console.log("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);

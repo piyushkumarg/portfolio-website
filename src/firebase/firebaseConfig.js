@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const env = import.meta.env;
-console.log(env)
 
 const firebaseConfig = {
   apiKey: env.VITE_apiKey,

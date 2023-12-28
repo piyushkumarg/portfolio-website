@@ -38,7 +38,7 @@ import {
 export const projectData = [
   {
     id: 1,
-    name: "Protfolio Website",
+    name: "Portfolio Website",
     img: "./assests/project/portfolio.png",
     desc: "Welcome to my immersive portfolio website, a digital canvas that encapsulates his professional journey, accomplishments, and expertise. This meticulously crafted multipage website is a testament to my skills and showcases his diverse range of projects and experiences.",
     github: "https://github.com/piyushkumarg/portfolio-website",
