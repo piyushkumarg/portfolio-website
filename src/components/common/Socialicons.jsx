@@ -36,7 +36,7 @@ const socialLinks = [
     icon: FaXTwitter,
   },
   {
-    id: 5,
+    id: 6,
     name: "Instagram",
     link: "https://instagram.com/piyushkumarreal",
     icon: FaInstagramSquare,
@@ -45,19 +45,18 @@ const socialLinks = [
 
 function Socialicons() {
   return (
-    <div className="flex text-2xl flex-wrap  gap-4 ">
+    <div className="flex text-2xl flex-wrap  gap-2 ">
       {socialLinks?.map((social) => (
         <div
           key={social.id}
-          className="transition ease-in-out delay-150 hover:-translate-y hover:scale-110  shadow-md hover:shadow-teal-600 duration-500"
+          className="relative group flex flex-col items-center rounded-xl transition ease-in-out delay-150  border-[1px] border-gray-500 p-2  hover:-translate hover:scale-105  hover:shadow-md hover:shadow-slate-700 duration-500"
         >
-          <a
-            href={social.link}
-            className="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y hover:scale-110 hover:bg-teal-700 shadow-md  duration-500"
-            target="_blank"
-          >
+          <a href={social.link} className="" target="_blank">
             <social.icon />
           </a>
+          <div className="opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded-md py-1 px-2 absolute bottom-full font-sans tracking-normal ">
+            {social.name}
+          </div>
         </div>
       ))}
     </div>

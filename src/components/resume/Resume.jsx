@@ -11,7 +11,8 @@ function Resume() {
       "https://drive.google.com/file/d/1sdEqUKCpT4wPIfuJAxWC3FGABGEjzVhM/view?usp=sharing";
     const anchor = document.createElement("a");
     anchor.href = fileUrl;
-    anchor.download = "resume.pdf"; // Set desired file name here
+    anchor.target = "_blank";
+    anchor.download = "Piyush-kumar-cv.pdf"; 
     anchor.click();
   };
 
@@ -39,7 +40,7 @@ function Resume() {
         }`}
       >
         <iframe
-          src="https://drive.google.com/file/d/1sdEqUKCpT4wPIfuJAxWC3FGABGEjzVhM/preview"
+          src="https://drive.google.com/file/d/1F9edQy1OxsdwzdeiQIbioyFt1oQmxAqf/preview"
           allow="autoplay"
           onLoad={() => setLoading(false)}
           title="Resume PDF"

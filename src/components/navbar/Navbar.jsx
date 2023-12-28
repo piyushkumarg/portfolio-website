@@ -1,48 +1,33 @@
 import { useState } from "react";
-import {
-  FaHome,
-  FaUser,
-  FaLaptopCode,
-  FaFileAlt,
-  FaAddressCard,
-  FaCloudSun,
-  FaBlog,
-} from "react-icons/fa";
+import { FaCloudSun } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
-
-const navigationItem = [
-  { id:1, name: "Home", src: "/", current: true, icon: FaHome },
-  { id:2, name: "About", src: "/about", current: false, icon: FaUser },
-  { id:3, name: "Projects", src: "/projects", current: false, icon: FaLaptopCode },
-  { id:4, name: "Resume", src: "/resume", current: false, icon: FaFileAlt },
-  { id:5, name: "Contact Me", src: "/contact", current: false, icon: FaAddressCard },
-  { id:6, name: "Blogs", src: "/blogs", current: false, icon: FaBlog },
-];
+import {navigationItem} from './navItem';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const [navigation, setNavigation] = useState(navigationItem)
+  const [navigation, setNavigation] = useState(navigationItem);
 
-   const handleLinkClick = (index) => {
-    console.log(index)
-     const updatedNavigation = navigation.map((nav) => {
-       if (nav.id === index) {
-         return { ...nav, current: true };
-       } else {
-         return { ...nav, current: false };
-       }
-     });
-     setOpen(false); // Close the mobile menu on link click
-     setNavigation(updatedNavigation); // Update the navigation state
-   };
+  const handleLinkClick = (index) => {
+    console.log(index);
+    const updatedNavigation = navigation.map((nav) => {
+      if (nav.id === index) {
+        return { ...nav, current: true };
+      } else {
+        return { ...nav, current: false };
+      }
+    });
+    setOpen(false); // Close the mobile menu on link click
+    setNavigation(updatedNavigation); // Update the navigation state
+  };
 
   return (
     <>
       <nav className="bg-gray-900 flex items-center justify-between h-[3.85rem] text-gray-200  lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0 z-50">
         <Link
           to="/"
+          onClick={() => handleLinkClick(1)}
           className="text-2xl font-medium font-carattere tracking-widest  "
         >
           <div className="flex gap-1 items-center ">
@@ -67,17 +52,17 @@ function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="md:hidden block absolute w-full  bg-gray-900 left-0  top-[3.75rem]">
+        <div className="md:hidden  absolute w-full  block  bg-gray-900 left-0  top-[3.75rem]">
           {open && (
-            <>
+            <div className="h-[calc(100vh-6rem)]  flex flex-col justify-center items-center gap-4 ">
               {navigation.map((nav) => (
                 <Link
                   to={nav.src}
                   onClick={() => handleLinkClick(nav.id)}
-                  className={`flex items-center justify-center ml-4 mr-4 p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110   hover:text-teal-300 duration-500 ${
+                  className={`flex items-center justify-center ml-4 mr-4 p-2 pl-16 pr-16  gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110    ${
                     nav.current
                       ? "bg-gray-200 text-gray-800 hover:text-gray-800"
-                      : ""
+                      : "hover:text-teal-300 duration-500"
                   }`}
                   key={nav.id}
                 >
@@ -85,7 +70,7 @@ function Navbar() {
                   {nav.name}
                 </Link>
               ))}
-            </>
+            </div>
           )}
         </div>
         <div className="flex gap-4">

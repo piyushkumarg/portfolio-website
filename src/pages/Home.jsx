@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/banner/Banner";
 import Intro from "../components/about/Intro";
 
-
+console.log(import.meta.env);
 
 function Home() {
   return (

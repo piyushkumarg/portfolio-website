@@ -16,37 +16,35 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path:"/",
-        element: <Home/>
+        path: "/",
+        element: <Home />,
       },
       {
-        path:"/contact",
-        element:<ContactMe/>
+        path: "/contact",
+        element: <ContactMe />,
       },
       {
-        path:"/about",
-        element:<AboutPage/>
+        path: "/about",
+        element: <AboutPage />,
       },
       {
-        path:"/resume",
-        element:<Resume/>
+        path: "/resume",
+        element: <Resume />,
       },
       {
-        path:"/projects",
-        element:<ProjectPage/>
+        path: "/projects",
+        element: <ProjectPage />,
       },
       {
-        path:"/blogs",
-        element:<BlogsPage/>
+        path: "/blogs",
+        element: <BlogsPage />,
       },
-      {
-        path:"*",
-        element: <PageNotFound/>
-      }
-    
-    ]
+    ],
   },
-  
+  {
+    path: "*",
+    element: <PageNotFound />,
+  },
 ]);
 
 function App() {

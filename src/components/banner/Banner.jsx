@@ -7,34 +7,9 @@ import { FaGithub} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TbMessage } from "react-icons/tb";
 
-const textVariants = {
-  initial: {
-    x: -500,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 2,
-      staggerChildren: 0.1,
-    },
-  },
-};
+import { textVariants } from "../motionVariants/motionVariants"; 
+import { sliderVariants } from "../motionVariants/motionVariants";
 
-const sliderVariants = {
-  initial: {
-    x: 0,
-  },
-  animate: {
-    x: "-220%",
-    transition: {
-      repeat: Infinity,
-      repeatType: "mirror",
-      duration: 20,
-    },
-  },
-};
 
 function Banner() {
   return (
@@ -42,7 +17,7 @@ function Banner() {
       <motion.div
         className="flex flex-col  justify-center gap-7 md:w-1/3 z-10  "
         variants={textVariants}
-        initial="initial"
+        initial={ {x: -500, opacity: 0,}}
         animate="animate"
       >
         <motion.h1 className="lg:text-6xl sm:text-5xl text-4xl  " variants={textVariants}>
@@ -53,8 +28,8 @@ function Banner() {
         </motion.h1>
         <motion.p className="sm:text-3xl text-2xl" variants={textVariants}>
           I'M{" "}
-          <span className="text-teal-500 sm:text-4xl text-3xl font-semibold">
-            PIYUSH KUMAR
+          <span className="text-teal-500 sm:text-5xl text-3xl font-semibold font-carattere tracking-widest">
+            Piyush kumar
           </span>
         </motion.p>
         <motion.div
