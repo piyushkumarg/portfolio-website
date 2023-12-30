@@ -63,7 +63,7 @@ function Navbar() {
             <Link
               to={nav.src}
               onClick={() => handleLinkClick(nav.id)}
-              className={`flex items-center justify-center p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110 hover:text-contentHighlight   duration-500 ${
+              className={`flex items-center justify-center p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110 hover:text-bgDark hover:bg-content   duration-500 ${
                 nav.current ? "bg-content text-bgDark " : ""
               }`}
               key={nav.id}
@@ -92,15 +92,19 @@ function Navbar() {
             </div>
           )}
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center justify-center">
           <button
-            className="  text-4xl  ransition ease-in-out delay-150 hover:-translate-y hover:scale-110 duration-500 t font-semibold p-2 rounded-lg  tracking-widest"
+            className="  text-3xl  ransition ease-in-out delay-150 hover:-translate-y hover:scale-110 duration-500 t font-semibold p-2 rounded-lg  tracking-widest"
             onClick={handleTheme}
           >
-            {theme === "dark" ? <FaCloudMoon /> : <FaCloudSun className="text-yellow-600" />}
+            {theme === "light" ? (
+              <FaCloudMoon />
+            ) : (
+              <FaCloudSun className="text-yellow-600" />
+            )}
           </button>
           <button
-            className="md:hidden block text-xl"
+            className="md:hidden block text-2xl"
             onClick={() => setOpen(!open)}
           >
             {open ? <ImCross /> : <GiHamburgerMenu />}

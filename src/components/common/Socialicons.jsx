@@ -54,7 +54,7 @@ function Socialicons() {
           <a href={social.link} className="" target="_blank">
             <social.icon />
           </a>
-          <div className="opacity-0 group-hover:opacity-100 bg-bgDark text-white text-xs rounded-md py-1 px-2 absolute bottom-full font-sans tracking-normal ">
+          <div className="opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded-md py-1 px-2 absolute bottom-full font-sans tracking-normal ">
             {social.name}
           </div>
         </div>
