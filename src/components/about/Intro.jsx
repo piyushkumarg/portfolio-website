@@ -6,9 +6,13 @@ import { textVariants } from "../motionVariants/motionVariants";
 
 function Intro() {
   return (
-    <div className="bg-gradient-to-b from-gray-700 to-gray-900  text-white flex flex-col justify-between  md:p-16 p-8">
+    <div className="bg-gradient-to-b from-bgDarkMute to-bgDark  text-content flex flex-col justify-between  md:p-16 p-8">
       <h1 className="font-medium md:text-6xl sm:text-4xl text-3xl text-center ">
-        LET ME <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">introduce</span> MYSELF
+        LET ME{" "}
+        <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
+          introduce
+        </span>{" "}
+        MYSELF
       </h1>
       <motion.div
         className="flex lg:flex-row flex-col-reverse items-center justify-between "
@@ -24,7 +28,7 @@ function Intro() {
               👋
             </span>{" "}
             I'm{" "}
-            <span className="text-teal-500 text-2xl font-semibold font-carattere tracking-widest">
+            <span className="text-contentHighlight text-2xl font-semibold font-carattere tracking-widest">
               Piyush kumar
             </span>
             , a passionate Software Engineering undergrad at UIET Panjab
@@ -35,14 +39,16 @@ function Intro() {
 
           <motion.p variants={textVariants}>
             I am fluent in classics like{" "}
-            <span className="text-teal-500 font-medium">C/C++, JavaScript</span>
+            <span className="text-contentHighlight font-medium">
+              C/C++, JavaScript
+            </span>
             . I've honed my skills in frontend technologies and Modern
             Javascript Library or Frameworks like{" "}
-            <span className="text-teal-500 font-medium">
+            <span className="text-contentHighlight font-medium">
               React.js, Next.js, Redux and TailwindCSS{" "}
             </span>{" "}
             as well as backend tools such as{" "}
-            <span className="text-teal-500 font-medium">
+            <span className="text-contentHighlight font-medium">
               NodeJS and MongoDB
             </span>
             .
@@ -50,7 +56,7 @@ function Intro() {
           <motion.p variants={textVariants}>
             My field of Interest's are building new Web Technologies and
             Products and also in areas related to{" "}
-            <span className="text-teal-500 font-medium">
+            <span className="text-contentHighlight font-medium">
               Blockchain & DevOps
             </span>
             .

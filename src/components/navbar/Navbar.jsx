@@ -1,13 +1,36 @@
-import { useState } from "react";
-import { FaCloudSun } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaCloudMoon, FaCloudSun } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
-import {navigationItem} from './navItem';
+import { navigationItem } from "./navItem";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
   const [navigation, setNavigation] = useState(navigationItem);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("data-theme");
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    setTheme(storedTheme || (prefersDarkMode ? "dark" : "light"));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("data-theme", theme);
+    const htmlElement = document.querySelector("html");
+    if (htmlElement) {
+      htmlElement.setAttribute("data-theme", theme);
+    }
+  }, [theme]);
+
+  const handleTheme = () => {
+    const updatedTheme = theme === "dark" ? "light" : "dark";
+    setTheme(updatedTheme);
+  };
 
   const handleLinkClick = (index) => {
     console.log(index);
@@ -24,14 +47,14 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-gray-900 flex items-center justify-between h-[3.85rem] text-gray-200  lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0 z-50">
+      <nav className="bg-bgDark flex items-center justify-between h-[3.85rem] text-content  lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0 z-50">
         <Link
           to="/"
           onClick={() => handleLinkClick(1)}
-          className="text-2xl font-medium font-carattere tracking-widest  "
+          className="text-2xl font-bold font-carattere tracking-widest  "
         >
           <div className="flex gap-1 items-center ">
-            <img src="./logo.svg" alt="" className="w-[1.75rem]" />
+            <img src="./logo.svg" alt="" className="w-[1.75rem] " />
             iyush
           </div>
         </Link>
@@ -40,10 +63,8 @@ function Navbar() {
             <Link
               to={nav.src}
               onClick={() => handleLinkClick(nav.id)}
-              className={`flex items-center justify-center p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110    duration-500 ${
-                nav.current
-                  ? "bg-gray-200 text-gray-800 hover:text-gray-800"
-                  : "hover:text-teal-300"
+              className={`flex items-center justify-center p-2 gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110 hover:text-contentHighlight   duration-500 ${
+                nav.current ? "bg-content text-bgDark " : ""
               }`}
               key={nav.id}
             >
@@ -52,17 +73,15 @@ function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="md:hidden  absolute w-full  block  bg-gray-900 left-0  top-[3.75rem]">
+        <div className="md:hidden  absolute w-full  block  bg-bgDark left-0  top-[3.75rem]">
           {open && (
             <div className="h-[calc(100vh-6rem)]  flex flex-col justify-center items-center gap-4 ">
               {navigation.map((nav) => (
                 <Link
                   to={nav.src}
                   onClick={() => handleLinkClick(nav.id)}
-                  className={`flex items-center justify-center ml-4 mr-4 p-2 pl-16 pr-16  gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110    ${
-                    nav.current
-                      ? "bg-gray-200 text-gray-800 hover:text-gray-800"
-                      : "hover:text-teal-300 duration-500"
+                  className={`flex items-center justify-center ml-4 mr-4 p-2 pl-16 pr-16  gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110 hover:text-contentHighlight   ${
+                    nav.current ? "bg-content text-bgDark " : " "
                   }`}
                   key={nav.id}
                 >
@@ -74,8 +93,11 @@ function Navbar() {
           )}
         </div>
         <div className="flex gap-4">
-          <button className="text-2xl">
-            <FaCloudSun />
+          <button
+            className="  text-4xl  ransition ease-in-out delay-150 hover:-translate-y hover:scale-110 duration-500 t font-semibold p-2 rounded-lg  tracking-widest"
+            onClick={handleTheme}
+          >
+            {theme === "dark" ? <FaCloudMoon /> : <FaCloudSun className="text-yellow-600" />}
           </button>
           <button
             className="md:hidden block text-xl"

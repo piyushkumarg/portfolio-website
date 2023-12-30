@@ -10,10 +10,10 @@ import { textVariants, skillsVariants } from "../motionVariants/motionVariants";
 function About() {
   return (
     <>
-      <div className="bg-gradient-to-b from-gray-900 to-gray-700  text-gray-200 flex flex-col justify-between  md:p-16 p-8">
+      <div className="bg-gradient-to-b from-bgDark to-bgDarkMute  text-content flex flex-col justify-between  md:p-16 p-8">
         <h1 className="font-medium md:text-6xl text-4xl text-center ">
           Know Who{" "}
-          <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
+          <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
             i'm
           </span>
         </h1>
@@ -31,11 +31,11 @@ function About() {
                 👋
               </span>{" "}
               I am{" "}
-              <span className="text-teal-500 text-2xl font-semibold font-carattere tracking-widest ">
+              <span className="text-contentHighlight text-2xl font-semibold font-carattere tracking-widest ">
                 Piyush kumar
               </span>{" "}
               from Nalanda, Bihar, India. I am currently as a
-              <span className="text-teal-500"> Computer Science</span> undergrad
+              <span className="text-contentHighlight"> Computer Science</span> undergrad
               at UIET Panjab University. I love building digital experiences
               that blend innovation with practicality.
             </motion.p>
@@ -60,7 +60,7 @@ function About() {
               whileInView="animate"
             >
               Professional{" "}
-              <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
+              <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
                 Skills
               </span>
             </motion.h1>
@@ -75,7 +75,7 @@ function About() {
                   key={skill.id}
                   variants={skillsVariants}
                   custom={i}
-                  className="flex flex-col items-center gap-2 text-8xl  rounded-xl cursor-pointer  transition ease-in-out delay-150 bg-slate-700 p-4 hover:-translate-y-1 hover:scale-110 hover:bg-slate-800 shadow-md hover:shadow-slate-600 duration-500"
+                  className="flex flex-col items-center gap-2 text-8xl  rounded-xl cursor-pointer  transition ease-in-out delay-150 bg-skillBg p-4 hover:-translate-y-1 hover:scale-110 hover:bg-skillBgHover shadow-md hover:skillShadow duration-500"
                 >
                   <skill.icon />
                   <p className="text-base">{skill.name}</p>
@@ -90,7 +90,7 @@ function About() {
               initial="initial"
               whileInView="animate"
             >
-              <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
+              <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
                 Tools
               </span>{" "}
               I Use
@@ -106,7 +106,7 @@ function About() {
                   key={skill.id}
                   variants={skillsVariants}
                   custom={i}
-                  className="flex flex-col items-center gap-2 text-8xl  rounded-xl cursor-pointer  transition ease-in-out delay-150 bg-slate-700 p-4 hover:-translate-y-1 hover:scale-110 hover:bg-slate-800 shadow-md hover:shadow-slate-600 duration-500"
+                  className="flex flex-col items-center gap-2 text-8xl  rounded-xl cursor-pointer  transition ease-in-out delay-150 bg-skillBg p-4 hover:-translate-y-1 hover:scale-110 hover:bg-skillBgHover shadow-md hover:skillShadow duration-500"
                 >
                   <skill.icon />
                   <p className="text-base">{skill.name}</p>

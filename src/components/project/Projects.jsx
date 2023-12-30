@@ -8,16 +8,16 @@ import { textVariants, skillsVariants } from "../motionVariants/motionVariants";
 function Projects() {
   return (
     <>
-      <div className="bg-gradient-to-b from-gray-900 to-gray-700 flex  flex-col  text-gray-200 md:p-16 p-4">
+      <div className="bg-gradient-to-b from-bgDark to-bgDarkMute flex  flex-col  text-content md:p-16 p-4">
         <h1 className="font-medium md:text-6xl sm:text-4xl  text-3xl text-center">
           My Recent{" "}
-          <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
+          <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
             Works{" "}
           </span>
         </h1>
         <p className="md:text-2xl text-lg text-center">
           Here are a few{" "}
-          <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-3xl text-xl ">
+          <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-3xl text-xl ">
             Projects
           </span>{" "}
           worked on recently
@@ -30,14 +30,14 @@ function Projects() {
               initial="initial"
               whileInView="animate"
               custom={i}
-              className="border-2 p-4  border-slate-500 rounded-xl max-w-[450px] transition ease-in-out delay-150   shadow-slate-700 shadow-md hover:scale-[101%] hover:shadow-slate-500 duration-500"
+              className="border-2 p-4 bg-skillBgHover  border-bgDarkMute rounded-xl max-w-[450px] transition ease-in-out delay-150  hover:scale-110 hover:bg-bgDark hover:shadow-bgDarkMute    shadow-md  duration-500"
             >
               <motion.div
                 variants={textVariants}
                 initial="initial"
                 whileInView="animate"
                 custom={i}
-                className="  flex flex-col gap-8"
+                className=" flex flex-col gap-8"
               >
                 <div className="relative group flex flex-col items-center justify-center ">
                   <motion.a
@@ -60,7 +60,7 @@ function Projects() {
                   variants={textVariants}
                   className="flex flex-col gap-1 text-justify"
                 >
-                  <h1 className="md:text-3xl text-xl font-bold tracking-wider text-teal-600">
+                  <h1 className="md:text-3xl text-xl font-bold tracking-wider text-contentHighlight">
                     {project.name}
                   </h1>
                   <p className="md:text-lg ">{project.desc}</p>
@@ -72,7 +72,7 @@ function Projects() {
                   {project.techStack.map((skill) => (
                     <div
                       key={skill.id}
-                      className="relative group flex flex-col items-center text-xl rounded-xl transition ease-in-out delay-150 bg-slate-700 p-4 hover:-translate hover:scale-105 hover:bg-slate-800 hover:shadow-md hover:shadow-slate-700 duration-500 "
+                      className="relative group flex flex-col items-center text-xl rounded-xl transition ease-in-out delay-150 bg-skillBg p-4 hover:-translate hover:scale-105 hover:bg-skillBgHover hover:shadow-md hover:shadow-skillBg duration-500 "
                     >
                       <div className="opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs rounded-md py-1 px-2 absolute top-full ">
                         {skill.name}
@@ -90,14 +90,14 @@ function Projects() {
                   <a
                     href={project.github}
                     target="_blank"
-                    className=" flex gap-2 items-center transition ease-in-out delay-150 bg-teal-600 hover:-translate-y hover:scale-110 hover:bg-teal-700 shadow-md hover:shadow-teal-600 duration-500 text-lg font-semibold p-2 rounded-lg  text-center tracking-widest"
+                    className=" flex gap-2 items-center transition ease-in-out delay-150 bg-buttonMain hover:-translate-y hover:scale-110 hover:bg-buttonHover shadow-md hover:shadow-buttonMain duration-500 text-lg font-semibold p-2 rounded-lg  text-center tracking-widest"
                   >
                     <FaGithub /> Source Code
                   </a>
                   <a
                     href={project.live}
                     target="_blank"
-                    className=" flex gap-2 items-center transition ease-in-out delay-150 bg-teal-600 hover:-translate-y  hover:scale-110 hover:bg-teal-700 shadow-md hover:shadow-teal-600 duration-500 text-lg font-semibold p-2 rounded-lg text-center tracking-widest"
+                    className=" flex gap-2 items-center transition ease-in-out delay-150 bg-buttonMain hover:-translate-y  hover:scale-110 hover:bg-buttonHover shadow-md hover:shadow-buttonMain duration-500 text-lg font-semibold p-2 rounded-lg text-center tracking-widest"
                   >
                     Live <FaExternalLinkAlt />
                   </a>
@@ -108,7 +108,7 @@ function Projects() {
         </modiv>
         {/* <Link
           to="/contact"
-          className=" text-2xl font-semibold p-2 rounded-lg mt-8 text-center tracking-widest transition ease-in-out delay-150 bg-teal-600 hover:-translate-y hover:scale-105 hover:bg-teal-700 shadow-md hover:shadow-teal-600 duration-500"
+          className=" text-2xl font-semibold p-2 rounded-lg mt-8 text-center tracking-widest transition ease-in-out delay-150 bg-buttonMain hover:-translate-y hover:scale-105 hover:bg-buttonHover shadow-md hover:shadow-buttonMain duration-500"
         >
           Contact Me
         </Link> */}

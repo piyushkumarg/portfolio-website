@@ -17,9 +17,9 @@ function Resume() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen flex flex-col justify-center items-center gap-4">
+    <div className="bg-gradient-to-b from-bgDark to-bgDarkMute min-h-screen flex flex-col justify-center items-center gap-4">
       {isLoading && (
-        <div className="text-gray-200 text-xl">
+        <div className="text-content text-xl">
           <Lottie animationData={loadingAnimation} />
         </div>
       )}
@@ -27,7 +27,7 @@ function Resume() {
       {!isLoading && (
         <div className="text-center mt-4  w-full fixed top-[3.75rem]">
           <button
-            className="bg-teal-700 hover:bg-teal-600 text-gray-200 font-bold py-2 px-4 rounded-md"
+            className="bg-buttonHover hover:bg-buttonMain text-content font-bold py-2 px-4 rounded-md"
             onClick={handleDownload}
           >
             Download CV

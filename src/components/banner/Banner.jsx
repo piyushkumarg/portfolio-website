@@ -13,14 +13,17 @@ import { sliderVariants } from "../motionVariants/motionVariants";
 
 function Banner() {
   return (
-    <div className="h-[calc(100vh-3.75rem)] bg-gradient-to-b from-gray-900 to-gray-700  text-gray-200  flex flex-col md:flex-row items-center justify-center md:justify-evenly md:gap-8 gap-4 p-8 overflow-hidden relative">
+    <div className="h-[calc(100vh-3.75rem)] bg-gradient-to-b from-bgDark to-bgDarkMute  text-content  flex flex-col md:flex-row items-center justify-center md:justify-evenly md:gap-8 gap-4 p-8 overflow-hidden relative">
       <motion.div
         className="flex flex-col  justify-center gap-7 md:w-1/3 z-10  "
         variants={textVariants}
-        initial={ {x: -500, opacity: 0,}}
+        initial={{ x: -500, opacity: 0 }}
         animate="animate"
       >
-        <motion.h1 className="lg:text-6xl sm:text-5xl text-4xl  " variants={textVariants}>
+        <motion.h1
+          className="lg:text-6xl sm:text-5xl text-4xl  "
+          variants={textVariants}
+        >
           Hi There!{" "}
           <span className="wave" role="img" aria-labelledby="wave">
             👋
@@ -28,30 +31,30 @@ function Banner() {
         </motion.h1>
         <motion.p className="sm:text-3xl text-2xl" variants={textVariants}>
           I'M{" "}
-          <span className="text-teal-500 sm:text-5xl text-3xl font-semibold font-carattere tracking-widest">
+          <span className="text-contentHighlight sm:text-5xl text-3xl font-semibold font-carattere tracking-widest">
             Piyush kumar
           </span>
         </motion.p>
         <motion.div
-          className="sm:text-3xl text-2xl md:pt-6 text-teal-500 font-medium"
+          className="sm:text-3xl text-2xl md:pt-6 text-contentHighlight font-medium"
           variants={textVariants}
         >
           <Type />
         </motion.div>
         <motion.div
-          className="text-3xl gap-4 md:pt-6 flex font-medium gap"
+          className="sm:text-xl text-lg  gap-4 md:pt-6 flex font-medium gap"
           variants={textVariants}
         >
           <Link
             to="/contact"
-            className=" flex gap-2 items-center transition ease-in-out delay-150 bg-teal-600 hover:-translate-y hover:scale-110 hover:bg-teal-700 shadow-md hover:shadow-teal-600 duration-500 text-xl font-semibold p-2 rounded-lg  text-center tracking-widest"
+            className=" flex gap-2  items-center transition ease-in-out delay-150 bg-buttonMain hover:-translate-y hover:scale-110 hover:bg-buttonHover shadow-md hover:shadow-buttonMain duration-500  font-semibold p-2 rounded-lg  text-center sm:tracking-widest"
           >
             <TbMessage /> Contact Me
           </Link>
           <a
             href="https://github.com/piyushkumarg"
             target="_blank"
-            className=" flex gap-2 items-center transition ease-in-out delay-150 bg-teal-600 hover:-translate-y  hover:scale-110 hover:bg-teal-700 shadow-md hover:shadow-teal-600 duration-500 text-xl font-semibold p-2 rounded-lg text-center tracking-widest"
+            className=" flex gap-2 items-center transition ease-in-out delay-150 bg-buttonMain hover:-translate-y  hover:scale-110 hover:bg-buttonHover shadow-md hover:shadow-buttonMain duration-500  font-semibold p-2 rounded-lg text-center sm:tracking-widest"
           >
             <FaGithub /> Github
           </a>
@@ -61,7 +64,7 @@ function Banner() {
       <Lottie className="md:w-1/3 z-10" animationData={bannerAnimmation} />
 
       <motion.div
-        className="absolute text-[50vh]  whitespace-nowrap text-gray-700 opacity-25 w-1/2 font-bold"
+        className="absolute text-[50vh]  whitespace-nowrap text-bgDarkMute opacity-25 w-1/2 font-bold"
         variants={sliderVariants}
         initial="initial"
         animate="animate"

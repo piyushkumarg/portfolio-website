@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { TextInput, Button, Group, Select, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import Socialicons from "../common/Socialicons";
@@ -28,41 +30,43 @@ function Contact() {
     },
 
     validate: {
-      name: (value) => (value.length < 3 ? "Invalid name" : null),
+      name: (value) => (value.length < 3 ? "Please enter a valid name" : null),
       email: (value) =>
-        /^\S+@\S+$/.test(value) ? null : "Please enter correct email",
-      mobile: (value) => {
-        const numericValue = Number(value);
-        if (isNaN(numericValue) || value.length < 10) {
-          return "Please enter correct mobile number ";
-        }
-        return null;
-      },
+        /^\S+@\S+$/.test(value) ? null : "Please enter valid email",
+      mobile: (value) =>
+        value.length < 10 ? "Please enter valid number" : null,
     },
   });
 
+  //db collection
   const userCollectionRef = collection(db, "contacted-user");
+
+  //  Send email using EmailJS in the browser
+  const handleEmailjs = async (values) => {
+    const emailParams = {
+      from_name: values.name,
+      from_email: values.email,
+      from_mobile: values.mobile,
+      message: values.message,
+    };
+
+    await emailjs.send(
+      env.VITE_emailjs_serviceId,
+      env.VITE_emailjs_template_Id,
+      emailParams,
+      env.VITE_emailjs_publicKey
+    );
+  };
+
   const handleSubmit = async (values) => {
     try {
       setfromLoad(true);
+
       //save data to fire store
       await addDoc(userCollectionRef, values);
 
-      //  Send email using EmailJS in the browser
-      const emailParams = {
-        from_name: values.name,
-        from_email: values.email,
-        from_mobile: values.mobile,
-        message: values.message,
-        // Add more parameters as needed based on your EmailJS template
-      };
-
-      await emailjs.send(
-        env.VITE_emailjs_serviceId,
-        env.VITE_emailjs_template_Id,
-        emailParams,
-        env.VITE_emailjs_publicKey
-      );
+      //emailjs
+      handleEmailjs(values);
 
       //reset form and show/hide animation
       form.reset();
@@ -71,7 +75,7 @@ function Contact() {
         setShowSubmitAnimation(false);
       }, 3000);
       setfromLoad(false);
-      console.log("Form submitted successfully!");
+      // console.log("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -79,29 +83,29 @@ function Contact() {
 
   return (
     <>
-      <div className="lg:h-[calc(100vh-7rem)] h-full   bg-gradient-to-b from-gray-900 to-gray-700  text-gray-200 flex items-center  md:pr-8   md:pl-8 w-full ">
+      <div className="lg:h-[calc(100vh-7rem)] h-full   bg-gradient-to-b from-bgDark to-bgDarkMute  text-content flex items-center  md:pr-8   md:pl-8 w-full ">
         <div className="w-full space-y-2">
           <h1 className="font-medium md:text-6xl text-4xl text-center">
-            <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
+            <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
               Contact
             </span>{" "}
             ME
           </h1>
           <p className="md:text-2xl text-lg text-center">
             Feel free to{" "}
-            <span className="text-teal-500 font-carattere tracking-widest font-semibold md:text-3xl text-xl ">
+            <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-3xl text-xl ">
               connect
             </span>{" "}
             with me
           </p>
           <div className="flex flex-col w-full lg:justify-between items-center lg:items-stretch   lg:flex-row  gap-4 p-4">
-            <div className=" sm:w-3/4 w-11/12 flex flex-col  justify-center  rounded-lg bg-slate-800  contact-info p-4  text-lg space-y-4">
+            <div className=" sm:w-3/4 w-11/12 flex flex-col  justify-center  rounded-lg bg-skillBgHover  contact-info p-4  text-lg space-y-4">
               <h1 className="text-2xl">Let&apos;s talk about everything!</h1>
               <div className="flex gap-2 items-center ">
                 Don&apos;t like forms? Send me an{" "}
                 <a
                   href="mailto:piyushkumar1116@gmail.com"
-                  className="text-teal-500 flex items-center gap-1 font-semibold text-2xl font-carattere tracking-widest hover:scale-105"
+                  className="text-contentHighlight flex items-center gap-1 font-semibold text-2xl font-carattere tracking-widest hover:scale-105"
                 >
                   <MdEmail /> email
                 </a>
@@ -121,7 +125,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-            <div className="sm:w-3/4 w-11/12 p-4 lg:p-0 lg:h-auto h-[450px] bg-slate-800 rounded-lg ">
+            <div className="sm:w-3/4 w-11/12 p-4 lg:p-0 lg:h-auto h-[450px] bg-skillBgHover rounded-lg ">
               {isLoading && (
                 <div className=" flex  items-center h-full">
                   <Lottie animationData={loadingAnimation} />
@@ -135,29 +139,51 @@ function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <div className=" sm:w-3/4 relative w-11/12 rounded-lg p-4 bg-slate-800   m-auto ">
+            <div className=" sm:w-3/4 relative w-11/12 rounded-lg p-4 bg-skillBgHover   m-auto ">
               <form
                 onSubmit={form.onSubmit((values) => handleSubmit(values))}
-                className="space-y-4   "
+                className={"space-y-4   "}
               >
                 <TextInput
                   withAsterisk
                   label="Name"
                   placeholder="Write Your Full name"
+                  // styles={{
+                  //   input: { background: "rgb(209 213 219)" },
+                  // }}
                   {...form.getInputProps("name")}
                 />
                 <TextInput
+                  variant="filled"
+                  style={{ input: "red" }}
                   withAsterisk
                   label="Email"
                   placeholder="Write your Email"
                   {...form.getInputProps("email")}
                 />
-                <TextInput
-                  withAsterisk
-                  label="Mobile"
-                  placeholder="Write your mobile number"
-                  {...form.getInputProps("mobile")}
-                />
+
+                <div>
+                  <label className="text-sm font-medium">
+                    Mobile <span className="text-red-500">*</span>
+                  </label>
+                  <PhoneInput
+                    country={"in"} // Set the default country
+                    inputProps={{
+                      name: "mobile",
+                      autoFocus: true,
+                      autoComplete: "tel",
+                      placeholder: "Enter mobile number",
+                    }}
+                    className="w-full  text-gray-800 rounded-lg"
+                    inputStyle={{ width: "100%" }}
+                    value={form.values.mobile}
+                    onChange={(value) => form.setFieldValue("mobile", value)}
+                  />
+                  {form.errors.mobile && (
+                    <div className="text-red-500">{form.errors.mobile}</div>
+                  )}
+                </div>
+
                 <Textarea
                   label="Message"
                   placeholder="Write message"
@@ -174,7 +200,7 @@ function Contact() {
                 </div>
               )}
               {formLoad && (
-                <div className="absolute top-0 flex items-center w-full justify-center bg-slate-800  h-full ">
+                <div className="absolute top-0 flex items-center w-full justify-center bg-skillBgHover  h-full ">
                   <Lottie animationData={loadingAnimation} id="submit" />
                 </div>
               )}
