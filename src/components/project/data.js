@@ -5,6 +5,7 @@ import {
   FaReact,
   FaStripe,
 } from "react-icons/fa";
+
 import {
   SiAxios,
   SiC,
@@ -28,12 +29,14 @@ import {
   SiTailwindcss,
   SiVercel,
 } from "react-icons/si";
+
 import {
   TbApi,
-  TbBrandFramerMotion,
   TbBrandJavascript,
   TbBrandVscode,
 } from "react-icons/tb";
+
+import { CgFramer } from "react-icons/cg";
 
 export const projectData = [
   {
@@ -48,33 +51,39 @@ export const projectData = [
         id: 1,
         name: "React.js",
         icon: FaReact,
+        color: "#61DAFB",
       },
       {
         id: 2,
         name: "Mantine UI",
         icon: SiMantine,
+        color: "#0088cc",
       },
       {
         id: 3,
         name: "TailwindCSS",
         icon: SiTailwindcss,
+        color: "#38B2AC",
       },
       {
         id: 4,
         name: "Firebase",
         icon: SiFirebase,
+        color: "#FFCA28",
       },
 
       {
         id: 5,
         name: "Framer Motion",
-        icon: TbBrandFramerMotion,
+        icon: CgFramer,
+        color: "",
       },
 
       {
         id: 8,
         name: "EmailJs",
         icon: SiProtonmail,
+        color: "#FFCA28",
       },
     ],
   },
@@ -90,38 +99,45 @@ export const projectData = [
         id: 1,
         name: "React.js",
         icon: FaReact,
+        color: "#61DAFB",
       },
       {
         id: 2,
         name: "Redux",
         icon: SiRedux,
+        color: "#764ABC",
       },
       {
         id: 3,
         name: "TailwindCSS",
         icon: SiTailwindcss,
+        color: "#38B2AC",
       },
       {
         id: 4,
-        name: "Node",
+        name: "NodeJs",
         icon: FaNodeJs,
+        color: "#68A063",
       },
 
       {
         id: 5,
         name: "MongoDB",
         icon: SiMongodb,
+        color: "#4DB33D",
       },
 
       {
         id: 8,
         name: "stripe",
         icon: FaStripe,
+        color: "#6772E5",
       },
       {
         id: 9,
         name: "JWT",
         icon: SiJsonwebtokens,
+        color: "",
       },
     ],
   },
@@ -138,28 +154,33 @@ export const projectData = [
         id: 1,
         name: "React.js",
         icon: FaReact,
+        color: "#61DAFB",
       },
 
       {
         id: 2,
         name: "TailwindCSS",
         icon: SiTailwindcss,
+        color: "#38B2AC",
       },
       {
         id: 3,
         name: "Youtube Rapid API",
         icon: TbApi,
+        color: "#FF0000",
       },
       {
         id: 4,
         name: "axios",
         icon: SiAxios,
+        color: "",
       },
 
       {
         id: 7,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
     ],
   },
@@ -175,18 +196,21 @@ export const projectData = [
         id: 1,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
 
       {
         id: 2,
         name: "React.js",
         icon: FaReact,
+        color: "#61DAFB",
       },
 
       {
         id: 3,
         name: "TailwindCSS",
         icon: SiTailwindcss,
+        color: "#38B2AC",
       },
     ],
   },
@@ -202,17 +226,20 @@ export const projectData = [
         id: 1,
         name: "React.js",
         icon: FaReact,
+        color: "#61DAFB",
       },
 
       {
         id: 2,
         name: "BootStrap",
         icon: FaBootstrap,
+        color: "#7952B3",
       },
       {
         id: 3,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
     ],
   },
@@ -228,22 +255,26 @@ export const projectData = [
         id: 1,
         name: "React.js",
         icon: FaReact,
+        color: "#61DAFB",
       },
 
       {
         id: 2,
         name: "TailwindCSS",
         icon: SiTailwindcss,
+        color: "#38B2AC",
       },
       {
         id: 3,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
       {
         id: 4,
         name: "Firebase",
         icon: SiFirebase,
+        color: "#FFCA28",
       },
     ],
   },
@@ -259,16 +290,19 @@ export const projectData = [
         id: 1,
         name: "HTML",
         icon: SiHtml5,
+        color: "#E34F26",
       },
       {
         id: 2,
         name: "CSS",
         icon: SiCss3,
+        color: "#1572B6",
       },
       {
         id: 3,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
     ],
   },
@@ -284,16 +318,19 @@ export const projectData = [
         id: 1,
         name: "HTML",
         icon: SiHtml5,
+        color: "#E34F26",
       },
       {
         id: 2,
         name: "CSS",
         icon: SiCss3,
+        color: "#1572B6",
       },
       {
         id: 3,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
     ],
   },
@@ -309,16 +346,19 @@ export const projectData = [
         id: 1,
         name: "HTML",
         icon: SiHtml5,
+        color: "#E34F26",
       },
       {
         id: 2,
         name: "CSS",
         icon: SiCss3,
+        color: "#1572B6",
       },
       {
         id: 3,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
     ],
   },
@@ -334,16 +374,19 @@ export const projectData = [
         id: 1,
         name: "HTML",
         icon: SiHtml5,
+        color: "#E34F26",
       },
       {
         id: 2,
         name: "CSS",
         icon: SiCss3,
+        color: "#1572B6",
       },
       {
         id: 3,
         name: "JavaScript",
         icon: TbBrandJavascript,
+        color: "#F7DF1E",
       },
     ],
   },

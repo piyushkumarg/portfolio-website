@@ -19,134 +19,187 @@ import {
   SiTailwindcss,
   SiVercel,
 } from "react-icons/si";
-import {
-  TbBrandFramerMotion,
-  TbBrandJavascript,
-  TbBrandVscode,
-} from "react-icons/tb";
+import { TbBrandJavascript, TbBrandVscode, TbBrandVite } from "react-icons/tb";
+
+import { CgFramer } from "react-icons/cg";
 
 export const techSkills = [
   {
     id: 1,
     name: "C",
-    icon: SiC ,
+    desc: "A general-purpose, imperative computer programming language. Known for its efficiency and being the basis for many other programming languages.",
+    icon: SiC,
+    color: "#A8B9CC",
   },
   {
     id: 2,
     name: "C++",
+    desc: "An extension of the C programming language, offering additional features like object-oriented programming, classes, and templates.",
     icon: SiCplusplus,
+    color: "#649AD2",
   },
   {
     id: 3,
     name: "JavaScript",
+    desc: "A versatile programming language primarily used for creating interactive effects within web browsers, enabling dynamic content and user interaction on web pages.",
     icon: TbBrandJavascript,
+    color: "#F7DF1E",
   },
-    {
-      id: 4,
-      name: "HTML",
-      icon: SiHtml5,
-    },
-    {
-      id: 5,
-      name: "CSS",
-      icon: SiCss3 ,
-    },
-    {
-      id: 6,
-      name: "CSS module",
-      icon: SiCssmodules,
-    },
-    {
-      id: 7,
-      name: "React.js",
-      icon: FaReact,
-    },
-    {
-      id: 8,
-      name: "Next.js",
-      icon: SiNextdotjs,
-    },
-    {
-      id: 9,
-      name: "TailwindCSS",
-      icon: SiTailwindcss ,
-    },
-    {
-      id: 10,
-      name: "Mantine UI",
-      icon: SiMantine ,
-    },
-    {
-      id: 11,
-      name: "Framer Motion",
-      icon: TbBrandFramerMotion ,
-    },
-    {
-      id: 12,
-      name: "BootStrap",
-      icon: FaBootstrap ,
-    },
-    {
-      id: 13,
-      name: "NodeJs",
-      icon: FaNodeJs ,
-    },
-    {
-      id: 14,
-      name: "MongoDB",
-      icon: SiMongodb,
-    },
-    {
-      id: 15,
-      name: "SQL",
-      icon: SiPostgresql,
-    },
-    {
-      id: 16,
-      name: "Mongoose",
-      icon: SiMongoose,
-    },
-    {
-      id: 17,
-      name: "Express.js",
-      icon: SiExpress,
-    },
-    {
-      id: 18,
-      name: "Redux",
-      icon: SiRedux,
-    }
+  {
+    id: 4,
+    name: "HTML",
+    desc: "HTML(HyperText Markup Language )is standard markup language for creating web pages and web applications. It defines the structure and content of web pages.",
+    icon: SiHtml5,
+    color: "#E34F26",
+  },
+  {
+    id: 5,
+    name: "CSS",
+    desc: "CSS(Cascading Style Sheets) is used to style the presentation of HTML and XML documents, defining the layout, colors, fonts, and other visual aspects of web pages.",
+    icon: SiCss3,
+    color: "#1572B6",
+  },
+  {
+    id: 6,
+    name: "CSS module",
+    desc: "A modular approach to writing and organizing CSS by scoped naming and local scoping, preventing style conflicts.",
+    icon: SiCssmodules,
+    color: "#DB7093",
+  },
+  {
+    id: 7,
+    name: "React.js",
+    desc: "A popular JavaScript library for building user interfaces, developed by Facebook. It allows developers to create reusable UI components.",
+    icon: FaReact,
+    color: "#61DAFB",
+  },
+  {
+    id: 8,
+    name: "Next.js",
+    desc: "A React framework that enables server-side rendering and helps build production-ready React applications with ease.",
+    icon: SiNextdotjs,
+    color: "#000000",
+  },
+  {
+    id: 9,
+    name: "TailwindCSS",
+    desc: "A utility-first CSS framework that provides low-level utility classes to build designs directly in HTML markup.",
+    icon: SiTailwindcss,
+    color: "#38B2AC",
+  },
+  {
+    id: 10,
+    name: "Mantine UI",
+    desc: "A React component library offering ready-to-use components to build modern web applications.",
+    icon: SiMantine,
+    color: "#0088cc",
+  },
+  {
+    id: 11,
+    name: "Framer Motion",
+    desc: "A React animation library for creating fluid animations and expressive transitions in user interfaces.",
+    icon: CgFramer,
+    color: "",
+  },
+  {
+    id: 12,
+    name: "BootStrap",
+    desc: "A front-end framework for building responsive and mobile-first websites, providing pre-built components and styles.",
+    icon: FaBootstrap,
+    color: "#7952B3",
+  },
+  {
+    id: 13,
+    name: "NodeJs",
+    desc: "A JavaScript runtime that allows the execution of JavaScript code server-side, enabling the development of scalable network applications.",
+    icon: FaNodeJs,
+    color: "#68A063",
+  },
+  {
+    id: 14,
+    name: "MongoDB",
+    desc: "A NoSQL database system that uses a document-oriented data model, storing data in flexible, JSON-like documents.",
+    icon: SiMongodb,
+    color: "#4DB33D",
+  },
+  {
+    id: 15,
+    name: "SQL",
+    desc: "SQL(Structured Query Language) is a language used to manage and manipulate relational databases.",
+    icon: SiPostgresql,
+    color: "#336791",
+  },
+  {
+    id: 16,
+    name: "Mongoose",
+    desc: "An Object Data Modeling (ODM) library for MongoDB and Node.js, providing a schema-based solution for modeling application data.",
+    icon: SiMongoose,
+    color: "#880000",
+  },
+  {
+    id: 17,
+    name: "Express.js",
+    desc: "A minimal and flexible Node.js web application framework, often used as the backend framework for web applications.",
+    icon: SiExpress,
+    color: "#000000",
+  },
+  {
+    id: 18,
+    name: "Redux",
+    desc: "A predictable state container for JavaScript applications, commonly used with React for managing application state.",
+    icon: SiRedux,
+    color: "#764ABC",
+  },
 ];
 
 export const toolStacks = [
   {
     id: 1,
     name: "VS Code",
-    icon: TbBrandVscode ,
+    desc: "A predictable state container for JavaScript applications, commonly used with React for managing application state.",
+    icon: TbBrandVscode,
+    color: "#007ACC",
   },
   {
     id: 2,
     name: "Postman",
-    icon: SiPostman ,
+    desc: " A collaboration platform for API development, allowing users to design, test, and document APIs.",
+    icon: SiPostman,
+    color: "#FF6C37",
   },
   {
     id: 3,
     name: "Firebase",
+    desc: "A platform developed by Google for building mobile and web applications, offering various tools and services like hosting, databases, authentication, and more.",
     icon: SiFirebase,
+    color: "#FFCA28",
   },
   {
     id: 4,
     name: "Vercel",
-    icon: SiVercel ,
+    desc: "A cloud platform for static sites and serverless functions, enabling seamless deployment and hosting of web projects.",
+    icon: SiVercel,
+    color: "#000000",
   },
   {
     id: 5,
     name: "Netlify",
-    icon: SiNetlify ,
+    desc: "A platform providing hosting and serverless backend services for web applications, emphasizing continuous deployment and developer workflow.",
+    icon: SiNetlify,
+    color: "#00C7B7",
   },
   {
-    id:6,
-    name:"stripe",
-    icon: FaStripe
-  }
+    id: 6,
+    name: "stripe",
+    desc: "A payment processing platform that allows businesses to accept payments and manage online transactions securely.",
+    icon: FaStripe,
+    color: "#6772E5",
+  },
+  {
+    id: 7,
+    name: "Vite",
+    desc: "",
+    icon: TbBrandVite,
+    color: "#00C7B7",
+  },
 ];

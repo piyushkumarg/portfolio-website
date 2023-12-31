@@ -7,8 +7,8 @@ import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import Socialicons from "../common/Socialicons";
 import Lottie from "lottie-react";
-import loadingAnimation from "./loadingAnim.json";
-import submitAnimation from "./submitAnim.json";
+import loadingCircleAnimation from "../lottieFiles/loadingCircleAnim.json";
+import submitAnimation from "../lottieFiles/submitAnim.json";
 import { Helmet } from "react-helmet";
 import { db } from "../../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
@@ -128,7 +128,7 @@ function Contact() {
             <div className="sm:w-3/4 w-11/12 p-4 lg:p-0 lg:h-auto h-[450px] bg-skillBgHover rounded-lg ">
               {isLoading && (
                 <div className=" flex  items-center h-full">
-                  <Lottie animationData={loadingAnimation} />
+                  <Lottie animationData={loadingCircleAnimation} />
                 </div>
               )}
               <iframe

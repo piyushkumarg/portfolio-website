@@ -19,7 +19,7 @@ function Cursor() {
 
   return (
     <motion.div
-    className='w-10 h-10 rounded-full border-2 border-content fixed z-[999]   shadow-md shadow-content'
+    className='w-10 h-10 rounded-full border-2 border-content fixed z-[999] shadow-md shadow-content '
       animate={{ x: position.x+5 , y: position.y+5 }}
     ></motion.div>
   );

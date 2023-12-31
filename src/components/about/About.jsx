@@ -1,11 +1,10 @@
 import React from "react";
-import aboutAnimation from "./aboutAnim.json";
+import aboutAnimation from "../lottieFiles/aboutAnim.json";
 import Lottie from "lottie-react";
 import { techSkills, toolStacks } from "./Skills";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { textVariants, skillsVariants } from "../motionVariants/motionVariants";
-
 
 function About() {
   return (
@@ -35,9 +34,9 @@ function About() {
                 Piyush kumar
               </span>{" "}
               from Nalanda, Bihar, India. I am currently as a
-              <span className="text-contentHighlight"> Computer Science</span> undergrad
-              at UIET Panjab University. I love building digital experiences
-              that blend innovation with practicality.
+              <span className="text-contentHighlight"> Computer Science</span>{" "}
+              undergrad at UIET Panjab University. I love building digital
+              experiences that blend innovation with practicality.
             </motion.p>
             <motion.p className="md:text-xl text-lg " variants={textVariants}>
               My career objective is to use my skills and knowledge to the
@@ -65,7 +64,7 @@ function About() {
               </span>
             </motion.h1>
             <motion.div
-              className="flex items-center justify-center md:gap-16 gap-4 flex-wrap md:pt-16 pt-8 "
+              className=" flex items-center justify-center md:gap-16 gap-4 flex-wrap md:pt-16 pt-8 "
               variants={skillsVariants}
               initial="initial"
               whileInView="animate"
@@ -77,7 +76,7 @@ function About() {
                   custom={i}
                   className="flex flex-col items-center gap-2 text-8xl  rounded-xl cursor-pointer  transition ease-in-out delay-150 bg-skillBg p-4 hover:-translate-y-1 hover:scale-110 hover:bg-skillBgHover shadow-md hover:skillShadow duration-500"
                 >
-                  <skill.icon />
+                  <skill.icon style={{ color: skill.color }} />
                   <p className="text-base">{skill.name}</p>
                 </motion.div>
               ))}
@@ -108,7 +107,7 @@ function About() {
                   custom={i}
                   className="flex flex-col items-center gap-2 text-8xl  rounded-xl cursor-pointer  transition ease-in-out delay-150 bg-skillBg p-4 hover:-translate-y-1 hover:scale-110 hover:bg-skillBgHover shadow-md hover:skillShadow duration-500"
                 >
-                  <skill.icon />
+                  <skill.icon style={{ color: skill.color }} />
                   <p className="text-base">{skill.name}</p>
                 </motion.div>
               ))}

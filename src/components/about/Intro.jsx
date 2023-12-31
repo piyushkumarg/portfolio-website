@@ -1,5 +1,5 @@
 import React from "react";
-import avtarAnimation from "./avtarAnim.json";
+import avtarAnimation from "../lottieFiles/avtarAnim.json";
 import Lottie from "lottie-react";
 import { motion} from "framer-motion";
 import { textVariants } from "../motionVariants/motionVariants";

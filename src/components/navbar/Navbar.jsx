@@ -58,6 +58,7 @@ function Navbar() {
             iyush
           </div>
         </Link>
+        {/* Desktop menu navigation */}
         <div className="lg:gap-4 gap-1 hidden md:flex">
           {navigation.map((nav) => (
             <Link
@@ -73,6 +74,8 @@ function Navbar() {
             </Link>
           ))}
         </div>
+
+        {/* Mobile menu Navigation  */}
         <div className="md:hidden  absolute w-full  block  bg-bgDark left-0  top-[3.75rem]">
           {open && (
             <div className="h-[calc(100vh-6rem)]  flex flex-col justify-center items-center gap-4 ">
@@ -80,7 +83,7 @@ function Navbar() {
                 <Link
                   to={nav.src}
                   onClick={() => handleLinkClick(nav.id)}
-                  className={`flex items-center justify-center ml-4 mr-4 p-2 pl-16 pr-16  gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:scale-110 hover:text-contentHighlight   ${
+                  className={`flex items-center justify-center ml-4 mr-4 p-2 w-52  gap-1 cursor-pointer text-lg font-medium rounded-lg hover:-translate-y  hover:bg-content hover:text-bgDark hover:scale-110    ${
                     nav.current ? "bg-content text-bgDark " : " "
                   }`}
                   key={nav.id}

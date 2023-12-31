@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Lottie from "lottie-react";
-import loadingAnimation from "./loadingAnim.json";
+import loadingHandAnimation from "../lottieFiles/loadingHandAnim.json";
 
 function Resume() {
   const [isLoading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ function Resume() {
     <div className="bg-gradient-to-b from-bgDark to-bgDarkMute min-h-screen flex flex-col justify-center items-center gap-4">
       {isLoading && (
         <div className="text-content text-xl">
-          <Lottie animationData={loadingAnimation} />
+          <Lottie animationData={loadingHandAnimation} />
         </div>
       )}
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Type from "./Type";
-import bannerAnimmation from "./bannerAnim.json";
+import bannerAnimation from "../lottieFiles/bannerAnim.json";
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 import { FaGithub} from "react-icons/fa";
@@ -61,7 +61,7 @@ function Banner() {
         </motion.div>
       </motion.div>
 
-      <Lottie className="md:w-1/3 z-10" animationData={bannerAnimmation} />
+      <Lottie className="md:w-1/3 z-10" animationData={bannerAnimation} />
 
       <motion.div
         className="absolute text-[50vh]  whitespace-nowrap text-bgDarkMute opacity-25 w-1/2 font-bold"

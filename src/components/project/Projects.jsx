@@ -78,7 +78,10 @@ function Projects() {
                         {skill.name}
                       </div>
                       <div className="cursor-pointer">
-                        <skill.icon className="text-xl" />
+                        <skill.icon
+                          className="text-xl"
+                          style={{color: skill.color   }}
+                        />
                       </div>
                     </div>
                   ))}
