@@ -10,11 +10,20 @@ function Footer() {
 
   return (
     <>
+      <button className="bg-skillBgHover hover:bg-skillBgHover/[0.98] text-contentHighlight w-full p-2 sm:text-2xl text-xl tracking-widest font-carattere"
+      onClick={()=> window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })}
+      >
+        Back to top
+      </button>
       <footer className="bg-bgDark text-content flex justify-center items-center gap-6 pb-4 text-lg w-full relative select-none bg-cover flex-col">
         <FooterBg />
         <div className="absolute top-4 flex flex-col justify-center items-center gap-5 font-carattere tracking-[0.2em] ">
           <p className="md:text-3xl text-xl text-center ">
-            Feel free to <span className="text-contentHighlight">connect</span> with me
+            Feel free to <span className="text-contentHighlight">connect</span>{" "}
+            with me
           </p>
           <div className="flex justify-center  ">
             <Socialicons />

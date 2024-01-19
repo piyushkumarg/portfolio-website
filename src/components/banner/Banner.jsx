@@ -3,19 +3,18 @@ import Type from "./Type";
 import bannerAnimation from "../lottieFiles/bannerAnim.json";
 import Lottie from "lottie-react";
 import { motion } from "framer-motion";
-import { FaGithub} from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { TbMessage } from "react-icons/tb";
-
-import { textVariants } from "../motionVariants/motionVariants"; 
+import { textVariants } from "../motionVariants/motionVariants";
 import { sliderVariants } from "../motionVariants/motionVariants";
-
+import Design from "../particleAnimation/Design";
 
 function Banner() {
   return (
-    <div className="h-[calc(100vh-3.75rem)] bg-gradient-to-b from-bgDark to-bgDarkMute  text-content  flex flex-col md:flex-row items-center justify-center md:justify-evenly md:gap-8 gap-4 p-8 overflow-hidden relative">
+    <div className="h-[calc(100vh-3.75rem)] bg-gradient-to-b from-bgDark to-bgDarkMute  text-content  flex flex-col md:flex-row items-center justify-center md:justify-evenly md:gap-8 gap-4 p-8 overflow-hidden relative bg-">
       <motion.div
-        className="flex flex-col  justify-center gap-7 md:w-1/3 z-10  "
+        className="flex flex-col  justify-center gap-7 md:w-1/3 z-10 lg:pt-0 pt-20"
         variants={textVariants}
         initial={{ x: -500, opacity: 0 }}
         animate="animate"
@@ -63,6 +62,7 @@ function Banner() {
 
       <Lottie className="md:w-1/3 z-10" animationData={bannerAnimation} />
 
+      {/* Background Slider */}
       <motion.div
         className="absolute text-[50vh]  whitespace-nowrap text-bgDarkMute opacity-25 w-1/2 font-bold"
         variants={sliderVariants}
@@ -71,6 +71,11 @@ function Banner() {
       >
         Software Developer Freelancer
       </motion.div>
+
+      {/* Particle Background */}
+      <div className="w-full h-screen absolute top-0 left-0 ">
+        <Design />
+      </div>
     </div>
   );
 }

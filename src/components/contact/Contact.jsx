@@ -142,7 +142,7 @@ function Contact() {
             <div className=" sm:w-3/4 relative w-11/12 rounded-lg p-4 bg-skillBgHover   m-auto ">
               <form
                 onSubmit={form.onSubmit((values) => handleSubmit(values))}
-                className={"space-y-4   "}
+                className="space-y-4"
               >
                 <TextInput
                   withAsterisk
@@ -155,7 +155,6 @@ function Contact() {
                 />
                 <TextInput
                   variant="filled"
-                  style={{ input: "red" }}
                   withAsterisk
                   label="Email"
                   placeholder="Write your Email"

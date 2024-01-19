@@ -4,7 +4,6 @@ import {
   SiCplusplus,
   SiCss3,
   SiCssmodules,
-  SiCsswizardry,
   SiExpress,
   SiFirebase,
   SiHtml5,

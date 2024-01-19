@@ -51,6 +51,7 @@ function About() {
         </div>
 
         <div>
+          {/* Skill Section */}
           <div className="md:p-8   ">
             <motion.h1
               className="font-medium md:text-6xl text-3xl text-center"
@@ -82,6 +83,8 @@ function About() {
               ))}
             </motion.div>
           </div>
+
+          {/* Tools Used */}
           <div className="md:p-8 pt-8   ">
             <motion.h1
               className="font-medium md:text-6xl text-3xl text-center"

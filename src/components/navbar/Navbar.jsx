@@ -9,6 +9,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [navigation, setNavigation] = useState(navigationItem);
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("data-theme");
@@ -26,6 +27,22 @@ function Navbar() {
       htmlElement.setAttribute("data-theme", theme);
     }
   }, [theme]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0.5*window.innerHeight) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleTheme = () => {
     const updatedTheme = theme === "dark" ? "light" : "dark";
@@ -47,7 +64,11 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-bgDark flex items-center justify-between h-[3.85rem] text-content  lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0 z-50">
+      <nav
+        className={`flex items-center justify-between h-[3.85rem] text-content lg:pl-16 lg:pr-16 pl-4 pr-4 bg-bgDark   ${
+          scrolling ? "sticky top-0 z-50" : ""
+        }`}
+      >
         <Link
           to="/"
           onClick={() => handleLinkClick(1)}

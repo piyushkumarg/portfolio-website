@@ -4,6 +4,7 @@ import { projectData } from "./data";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { textVariants, skillsVariants } from "../motionVariants/motionVariants";
+import Image from "../lazyLoadImage/Image";
 
 function Projects() {
   return (
@@ -23,7 +24,7 @@ function Projects() {
           worked on recently
         </p>
 
-        <modiv className="flex flex-wrap justify-center  gap-4 pt-8">
+        <div className="flex flex-wrap justify-center  gap-4 pt-8">
           {projectData.map((project, i) => (
             <motion.div
               variants={skillsVariants}
@@ -46,10 +47,10 @@ function Projects() {
                     href={project.live}
                     target="_blank"
                   >
-                    <img
+                    <Image
                       src={project.img}
                       alt=""
-                      className=" w-full h-full object-cover  "
+                      className=" w-full h-full object-cover aspect-[2/1]  "
                     />
                   </motion.a>
                   <div className="opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-sm rounded-md py-1 px-2 absolute  font-sans tracking-normal ">
@@ -80,7 +81,7 @@ function Projects() {
                       <div className="cursor-pointer">
                         <skill.icon
                           className="text-xl"
-                          style={{color: skill.color   }}
+                          style={{ color: skill.color }}
                         />
                       </div>
                     </div>
@@ -108,7 +109,7 @@ function Projects() {
               </motion.div>
             </motion.div>
           ))}
-        </modiv>
+        </div>
         {/* <Link
           to="/contact"
           className=" text-2xl font-semibold p-2 rounded-lg mt-8 text-center tracking-widest transition ease-in-out delay-150 bg-buttonMain hover:-translate-y hover:scale-105 hover:bg-buttonHover shadow-md hover:shadow-buttonMain duration-500"
