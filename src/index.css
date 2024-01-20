@@ -38,7 +38,7 @@
       --color-button: 0 0% 100%;
       --color-button-hover: 216 12% 84%;
       --color-skill-bg: 0 0% 100%;
-      --color-skill-bg-hover: 216 8% 88% ;
+      --color-skill-bg-hover: 216 8% 88%;
       --color-skill-shadow: 215 19%, 35%;
     }
   }
@@ -55,15 +55,15 @@
     --color-skill-shadow: 215 19%, 35%;
   }
   :root[data-theme="light"] {
-      --color-bg-dark: 216 12% 84%;
-      --color-bg-dark-mute: 0 0% 100%;
-      --color-content: 0 0% 10%;
-      --color-content-highlight: 175 77% 26%;
-      --color-button: 0 0% 100%;
-      --color-button-hover: 216 12% 84%;
-      --color-skill-bg: 0 0% 100%;
-      --color-skill-bg-hover: 216 8% 88% ;
-      --color-skill-shadow: 215 19%, 35%;
+    --color-bg-dark: 216 12% 84%;
+    --color-bg-dark-mute: 0 0% 100%;
+    --color-content: 0 0% 10%;
+    --color-content-highlight: 175 77% 26%;
+    --color-button: 0 0% 100%;
+    --color-button-hover: 216 12% 84%;
+    --color-skill-bg: 0 0% 100%;
+    --color-skill-bg-hover: 216 8% 88%;
+    --color-skill-shadow: 215 19%, 35%;
   }
 }
 
@@ -100,4 +100,27 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+/* Custon scrollbar */
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--color-bg-dark));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-skill-bg));
+  border-radius: 1rem;
+  border: 0.1rem solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-content-highlight));
+  border-radius: 1rem;
+  border: 0.1rem solid transparent;
+  background-clip: content-box;
 }

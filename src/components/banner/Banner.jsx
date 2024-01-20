@@ -14,7 +14,7 @@ function Banner() {
   return (
     <div className="h-[calc(100vh-3.75rem)] bg-gradient-to-b from-bgDark to-bgDarkMute  text-content  flex flex-col md:flex-row items-center justify-center md:justify-evenly md:gap-8 gap-4 p-8 overflow-hidden relative bg-">
       <motion.div
-        className="flex flex-col  justify-center gap-7 md:w-1/3 z-10 lg:pt-0 pt-20"
+        className="flex flex-col  justify-center gap-7 md:w-1/3 z-10"
         variants={textVariants}
         initial={{ x: -500, opacity: 0 }}
         animate="animate"

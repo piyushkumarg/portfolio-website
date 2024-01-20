@@ -30,7 +30,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0.5*window.innerHeight) {
+      if (window.scrollY > 0.75*window.innerHeight) {
         setScrolling(true);
       } else {
         setScrolling(false);
@@ -65,8 +65,8 @@ function Navbar() {
   return (
     <>
       <nav
-        className={`flex items-center justify-between h-[3.85rem] text-content lg:pl-16 lg:pr-16 pl-4 pr-4 bg-bgDark   ${
-          scrolling ? "sticky top-0 z-50" : ""
+        className={`flex items-center justify-between h-[3.85rem] text-content lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0  z-50 ${
+          scrolling ? "bg-bgDark" : "md:bg-transparent bg-bgDark"
         }`}
       >
         <Link
@@ -99,7 +99,7 @@ function Navbar() {
         {/* Mobile menu Navigation  */}
         <div className="md:hidden  absolute w-full  block  bg-bgDark left-0  top-[3.75rem]">
           {open && (
-            <div className="h-[calc(100vh-6rem)]  flex flex-col justify-center items-center gap-4 ">
+            <div className="h-[calc(100vh-5.75rem)]  flex flex-col justify-center items-center gap-4 ">
               {navigation.map((nav) => (
                 <Link
                   to={nav.src}

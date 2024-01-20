@@ -7,13 +7,13 @@ import ScrollToTop from '../../pages/ScrollToTop'
 
 function Layout() {
   return (
-    <>
+    <div className='bg-bgDark'>
       <ScrollToTop />
       <Cursor />
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 }
 
