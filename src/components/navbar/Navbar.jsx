@@ -66,7 +66,7 @@ function Navbar() {
     <>
       <nav
         className={`flex items-center justify-between h-[3.85rem] text-content lg:pl-16 lg:pr-16 pl-4 pr-4 sticky top-0  z-50 ${
-          scrolling ? "bg-bgDark" : "md:bg-transparent bg-bgDark"
+          scrolling ? "bg-bgDark/80 backdrop-blur-md" : "md:bg-transparent backdrop-blur-md bg-bgDark/80"
         }`}
       >
         <Link
@@ -118,7 +118,7 @@ function Navbar() {
         </div>
         <div className="flex gap-4 items-center justify-center">
           <button
-            className="  text-3xl  ransition ease-in-out delay-150 hover:-translate-y hover:scale-110 duration-500 t font-semibold p-2 rounded-lg  tracking-widest"
+            className="text-3xl  transition ease-in-out delay-150 hover:-translate-y hover:scale-110 duration-500 t font-semibold p-2 rounded-lg  tracking-widest"
             onClick={handleTheme}
           >
             {theme === "light" ? (

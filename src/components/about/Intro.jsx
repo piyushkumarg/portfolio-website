@@ -1,13 +1,13 @@
 import React from "react";
 import avtarAnimation from "../lottieFiles/avtarAnim.json";
 import Lottie from "lottie-react";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { textVariants } from "../motionVariants/motionVariants";
 
 function Intro() {
   return (
     // Used in Home page
-    <div className="bg-gradient-to-b from-bgDarkMute to-bgDark  text-content flex flex-col justify-between  md:p-16 p-8">
+    <div className="bg-gradient-to-b from-bgDarkMute to-bgDark  text-content flex flex-col justify-between  items-center md:p-16 p-8">
       <h1 className="font-medium md:text-6xl sm:text-4xl text-3xl text-center ">
         LET ME{" "}
         <span className="text-contentHighlight font-carattere tracking-widest font-semibold md:text-7xl text-4xl ">
@@ -15,7 +15,7 @@ function Intro() {
         </span>{" "}
         MYSELF
       </h1>
-      
+
       <motion.div
         className="flex lg:flex-row flex-col-reverse items-center justify-between "
         variants={textVariants}

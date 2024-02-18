@@ -8,7 +8,7 @@ function Resume() {
   const handleDownload = () => {
     // Replace the file URL with your PDF file's URL
     const fileUrl =
-      "https://drive.google.com/file/d/1sdEqUKCpT4wPIfuJAxWC3FGABGEjzVhM/view?usp=sharing";
+      "https://drive.google.com/file/d/1F9edQy1OxsdwzdeiQIbioyFt1oQmxAqf/view";
     const anchor = document.createElement("a");
     anchor.href = fileUrl;
     anchor.target = "_blank";

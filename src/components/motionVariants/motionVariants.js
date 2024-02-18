@@ -46,3 +46,18 @@ export const sliderVariants = {
     },
   },
 };
+
+export const skillSliderVariants = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: "-50%",
+    transition: {
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: 10,
+    },
+  },
+};

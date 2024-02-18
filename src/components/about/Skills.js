@@ -10,12 +10,15 @@ import {
   SiMantine,
   SiMongodb,
   SiMongoose,
+  SiMysql,
   SiNetlify,
   SiNextdotjs,
-  SiPostgresql,
   SiPostman,
+  SiRedis,
   SiRedux,
+  SiSequelize,
   SiTailwindcss,
+  SiTypescript,
   SiVercel,
 } from "react-icons/si";
 import { TbBrandJavascript, TbBrandVscode, TbBrandVite } from "react-icons/tb";
@@ -43,6 +46,13 @@ export const techSkills = [
     desc: "A versatile programming language primarily used for creating interactive effects within web browsers, enabling dynamic content and user interaction on web pages.",
     icon: TbBrandJavascript,
     color: "#F7DF1E",
+  },
+  {
+    id: 3.1,
+    name: "TypeScript",
+    desc: "A versatile programming language primarily used for creating interactive effects within web browsers, enabling dynamic content and user interaction on web pages.",
+    icon: SiTypescript,
+    color: "#3178C6",
   },
   {
     id: 4,
@@ -125,7 +135,7 @@ export const techSkills = [
     id: 15,
     name: "SQL",
     desc: "SQL(Structured Query Language) is a language used to manage and manipulate relational databases.",
-    icon: SiPostgresql,
+    icon: SiMysql,
     color: "#336791",
   },
   {
@@ -148,6 +158,20 @@ export const techSkills = [
     desc: "A predictable state container for JavaScript applications, commonly used with React for managing application state.",
     icon: SiRedux,
     color: "#764ABC",
+  },
+  {
+    id: 19,
+    name: "Sequelize",
+    desc: "",
+    icon: SiSequelize,
+    color: "#52B0E7",
+  },
+  {
+    id: 20,
+    name: "Redis",
+    desc: "",
+    icon: SiRedis,
+    color: "#DC382D",
   },
 ];
 
