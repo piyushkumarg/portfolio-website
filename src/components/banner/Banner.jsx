@@ -12,7 +12,7 @@ import Design from "../particleAnimation/Design";
 
 function Banner() {
   return (
-    <div className="h-[calc(100vh-3.75rem)] bg-gradient-to-b from-bgDark to-bgDarkMute flex flex-col">
+    <div className="min-h-[calc(100vh-3.75rem)] bg-gradient-to-b from-bgDark to-bgDarkMute flex flex-col">
       <div className="flex flex-col md:flex-row items-center text-content justify-center md:justify-evenly md:gap-8 gap-4 p-8 overflow-hidden relative">
         <motion.div
           className="flex flex-col  justify-center gap-7 md:w-1/3 z-10"
