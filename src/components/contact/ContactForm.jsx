@@ -5,6 +5,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Lottie from "lottie-react";
 import submitAnimation from "../lottieFiles/submitAnim.json";
+import loadingCircleAnimation from "../lottieFiles/loadingCircleAnim.json";
 import { db } from "../../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
@@ -12,7 +13,6 @@ import emailjs from "@emailjs/browser";
 const env = import.meta.env;
 
 function ContactForm() {
-    const [isLoading, setLoading] = useState(true);
     const [formLoad, setfromLoad] = useState(false);
     const [showSubmitAnimation, setShowSubmitAnimation] = useState(false);
 
@@ -138,7 +138,7 @@ function ContactForm() {
             )}
             {formLoad && (
                 <div className="absolute top-0 flex items-center w-full justify-center bg-skillBgHover  h-full ">
-                    <Lottie animationData={loadingAnimation} id="submit" />
+                    <Lottie animationData={loadingCircleAnimation} id="submit" />
                 </div>
             )}
         </div>

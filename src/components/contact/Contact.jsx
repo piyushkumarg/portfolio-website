@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useForm } from "@mantine/form";
 import "react-phone-input-2/lib/style.css";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
@@ -7,77 +6,12 @@ import Socialicons from "../common/Socialicons";
 import Lottie from "lottie-react";
 import loadingCircleAnimation from "../lottieFiles/loadingCircleAnim.json";
 import { Helmet } from "react-helmet";
-import { db } from "../../firebase/firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
-import emailjs from "@emailjs/browser";
 import ContactForm from "./ContactForm";
 
 const env = import.meta.env;
 
 function Contact() {
   const [isLoading, setLoading] = useState(true);
-  const [formLoad, setfromLoad] = useState(false);
-  const [showSubmitAnimation, setShowSubmitAnimation] = useState(false);
-
-  const form = useForm({
-    initialValues: {
-      name: "",
-      email: "",
-      mobile: "",
-      message: "",
-    },
-
-    validate: {
-      name: (value) => (value.length < 3 ? "Please enter a valid name" : null),
-      email: (value) =>
-        /^\S+@\S+$/.test(value) ? null : "Please enter valid email",
-      mobile: (value) =>
-        value.length < 10 ? "Please enter valid number" : null,
-    },
-  });
-
-  //db collection
-  const userCollectionRef = collection(db, "contacted-user");
-
-  //  Send email using EmailJS in the browser
-  const handleEmailjs = async (values) => {
-    const emailParams = {
-      from_name: values.name,
-      from_email: values.email,
-      from_mobile: values.mobile,
-      message: values.message,
-    };
-
-    await emailjs.send(
-      env.VITE_emailjs_serviceId,
-      env.VITE_emailjs_template_Id,
-      emailParams,
-      env.VITE_emailjs_publicKey
-    );
-  };
-
-  const handleSubmit = async (values) => {
-    try {
-      setfromLoad(true);
-
-      //save data to fire store
-      await addDoc(userCollectionRef, values);
-
-      //emailjs
-      handleEmailjs(values);
-
-      //reset form and show/hide animation
-      form.reset();
-      setShowSubmitAnimation(true);
-      setTimeout(() => {
-        setShowSubmitAnimation(false);
-      }, 3000);
-      setfromLoad(false);
-      // console.log("Form submitted successfully!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
-  };
 
   return (
     <>
