@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { TextInput, Button, Group, Select, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { MdEmail } from "react-icons/md";
 import { IoLocation } from "react-icons/io5";
 import Socialicons from "../common/Socialicons";
 import Lottie from "lottie-react";
 import loadingCircleAnimation from "../lottieFiles/loadingCircleAnim.json";
-import submitAnimation from "../lottieFiles/submitAnim.json";
 import { Helmet } from "react-helmet";
 import { db } from "../../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
+import ContactForm from "./ContactForm";
 
 const env = import.meta.env;
 
@@ -140,69 +138,7 @@ function Contact() {
               ></iframe>
             </div>
             <div className=" sm:w-3/4 relative w-11/12 rounded-lg p-4 bg-skillBgHover   m-auto ">
-              <form
-                onSubmit={form.onSubmit((values) => handleSubmit(values))}
-                className="space-y-4"
-              >
-                <TextInput
-                  withAsterisk
-                  label="Name"
-                  placeholder="Write Your Full name"
-                  // styles={{
-                  //   input: { background: "rgb(209 213 219)" },
-                  // }}
-                  {...form.getInputProps("name")}
-                />
-                <TextInput
-                  variant="filled"
-                  withAsterisk
-                  label="Email"
-                  placeholder="Write your Email"
-                  {...form.getInputProps("email")}
-                />
-
-                <div>
-                  <label className="text-sm font-medium">
-                    Mobile <span className="text-red-500">*</span>
-                  </label>
-                  <PhoneInput
-                    country={"in"} // Set the default country
-                    inputProps={{
-                      name: "mobile",
-                      autoFocus: true,
-                      autoComplete: "tel",
-                      placeholder: "Enter mobile number",
-                    }}
-                    className="w-full  text-gray-800 rounded-lg"
-                    inputStyle={{ width: "100%" }}
-                    value={form.values.mobile}
-                    onChange={(value) => form.setFieldValue("mobile", value)}
-                  />
-                  {form.errors.mobile && (
-                    <div className="text-red-500">{form.errors.mobile}</div>
-                  )}
-                </div>
-
-                <Textarea
-                  label="Message"
-                  placeholder="Write message"
-                  {...form.getInputProps("message")}
-                />
-
-                <Button type="submit" fullWidth>
-                  Submit
-                </Button>
-              </form>
-              {showSubmitAnimation && (
-                <div className="absolute top-0 flex items-center w-full justify-center  h-full ">
-                  <Lottie animationData={submitAnimation} id="submit" />
-                </div>
-              )}
-              {formLoad && (
-                <div className="absolute top-0 flex items-center w-full justify-center bg-skillBgHover  h-full ">
-                  <Lottie animationData={loadingAnimation} id="submit" />
-                </div>
-              )}
+              <ContactForm />
             </div>
           </div>
         </div>
