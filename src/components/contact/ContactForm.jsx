@@ -70,7 +70,7 @@ function ContactForm() {
       await addDoc(userCollectionRef, valuesToInsertInDB);
 
       //emailjs
-    //   handleEmailjs(values);
+      handleEmailjs(values);
 
       //reset form and show/hide animation
       form.reset();
