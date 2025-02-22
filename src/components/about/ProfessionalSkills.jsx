@@ -8,7 +8,7 @@ import SkillSection from "./SkillSection";
 function ProfessionalSkills() {
   return (
     <>
-      <div className="bg-gradient-to-b from-bgDarkMute to-bgDark text-content flex flex-col justify-between md:p-16 p-8">
+      <div className="bg-gradient-to-b from-bgDarkMute to-bgDark text-content flex flex-col justify-between p-8">
         <div className="flex flex-col md:gap-12 gap-8 md:pt-16 pt-4">
           <motion.h1
             className="font-medium md:text-6xl text-3xl text-center"

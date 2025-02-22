@@ -2,9 +2,9 @@ import React from "react";
 
 export default function AcademicDetails() {
   return (
-    <div className="text-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <div className="text-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full font-medium">
       {/* Education Section */}
-      <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-contentHighlight to-contentHighlight/90 bg-clip-text text-transparent">
+      <h2 className="md:text-5xl text-3xl font-semibold mb-12 bg-gradient-to-r from-contentHighlight to-contentHighlight/90 bg-clip-text text-transparent">
         Academic Background
       </h2>
 
@@ -13,14 +13,14 @@ export default function AcademicDetails() {
         {/* Bachelor's Degree */}
         <div className="relative pl-8 border-l-2 border-green-500/30">
           <div className="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] top-0 ring-4 ring-green-500/20" />
-          <div className="bg-gray-800/30 rounded-xl p-8">
+          <div className="bg-bgDark shadow-sm rounded-xl sm:p-8 p-2">
             <h3 className="text-2xl font-bold mb-2">
               Bachelor of Engineering in Computer Science
             </h3>
-            <p className="text-green-400 mb-4">
+            <p className="text-green-600 mb-4">
               Panjab University, Chandigarh • Jul 2020 - Jun 2024
             </p>
-            <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
+            {/* <div className="flex flex-col md:flex-row justify-between gap-4 mb-6">
               <div className="bg-green-500/10 p-3 rounded-lg flex-1">
                 <p className="text-sm text-green-400">Final GPA</p>
                 <p className="text-2xl font-bold">8.80/10</p>
@@ -29,8 +29,8 @@ export default function AcademicDetails() {
                 <p className="text-sm text-blue-400">Specialization</p>
                 <p className="font-medium">Software Systems</p>
               </div>
-            </div>
-            <ul className="space-y-3 text-gray-300">
+            </div> */}
+            <ul className="space-y-3 text-content/80">
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">▹</span>
                 Coursework: Algorithms, Database Systems, Computer Networks,
