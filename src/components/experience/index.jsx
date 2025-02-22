@@ -72,9 +72,9 @@ const Experience = () => {
                       10+ Successful Projects • 2021 - Present
                     </p>
                   </div>
-                  <div className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                  {/* <div className="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                     10+
-                  </div>
+                  </div> */}
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                   <div className="bg-gray-700/30 p-3 rounded-lg text-center">
