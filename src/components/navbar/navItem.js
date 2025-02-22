@@ -4,12 +4,7 @@ import {
   FaLaptopCode,
   FaFileAlt,
   FaAddressCard,
-  FaCloudSun,
-  FaBlog,
 } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { ImCross } from "react-icons/im";
-import { Link } from "react-router-dom";
 
 export const navigationItem = [
   { id: 1, name: "Home", src: "/", current: true, icon: FaHome },
@@ -29,5 +24,5 @@ export const navigationItem = [
     current: false,
     icon: FaAddressCard,
   },
-  { id: 6, name: "Blogs", src: "/blogs", current: false, icon: FaBlog },
+  // { id: 6, name: "Blogs", src: "/blogs", current: false, icon: FaBlog },
 ];

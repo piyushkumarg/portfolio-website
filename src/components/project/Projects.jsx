@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { textVariants, skillsVariants } from "../motionVariants/motionVariants";
 import Image from "../lazyLoadImage/Image";
+import ProjectCTA from "../cta/ProjectCTA";
 
 function Projects() {
   return (
@@ -24,6 +25,7 @@ function Projects() {
           worked on recently
         </p>
 
+        <ProjectCTA />
         <div className="flex flex-wrap justify-center  gap-4 pt-8">
           {projectData.map((project, i) => (
             <motion.div

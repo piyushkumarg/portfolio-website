@@ -1,6 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import { FaLinkedin, FaGithub, FaInstagramSquare, FaTelegram } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaInstagramSquare,
+  FaTelegram,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
@@ -11,7 +16,6 @@ const socialLinks = [
     link: "https://www.linkedin.com/in/piyush-kumarg/",
     icon: FaLinkedin,
     color: "#0077B5",
-   
   },
   {
     id: 2,
@@ -19,7 +23,6 @@ const socialLinks = [
     link: "https://github.com/piyushkumarg",
     icon: FaGithub,
     color: "#181717",
-  
   },
   {
     id: 3,
@@ -27,7 +30,6 @@ const socialLinks = [
     link: "https://leetcode.com/piyushkumarg/",
     icon: SiLeetcode,
     color: "#FFA116",
-  
   },
   {
     id: 4,
@@ -35,7 +37,6 @@ const socialLinks = [
     link: "https://t.me/PiyushKumarReal",
     icon: FaTelegram,
     color: "#0088cc",
-   
   },
   {
     id: 5,
@@ -43,7 +44,6 @@ const socialLinks = [
     link: "https://twitter.com/piyushkumarreal",
     icon: FaXTwitter,
     color: "#000000",
-   
   },
   {
     id: 6,
@@ -51,7 +51,6 @@ const socialLinks = [
     link: "https://instagram.com/piyushkumarreal",
     icon: FaInstagramSquare,
     color: "#C13584",
-   
   },
 ];
 
@@ -65,8 +64,11 @@ function Socialicons() {
         >
           <a
             href={social.link}
-            style={{ color: social.color, backgroundColor: "#FFFFFF", borderRadius: '0.25rem' }}
-           
+            style={{
+              color: social.color,
+              backgroundColor: "#FFFFFF",
+              borderRadius: "0.25rem",
+            }}
             target="_blank"
           >
             <social.icon />
