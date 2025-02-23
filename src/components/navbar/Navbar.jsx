@@ -50,7 +50,7 @@ function Navbar() {
   };
 
   const handleLinkClick = (index) => {
-    console.log(index);
+    // console.log(index);
     const updatedNavigation = navigation.map((nav) => {
       if (nav.id === index) {
         return { ...nav, current: true };

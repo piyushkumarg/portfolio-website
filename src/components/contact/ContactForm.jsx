@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import { TextInput, Button, Group, Select, Textarea } from "@mantine/core";
+import { TextInput, Button, Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Lottie from "lottie-react";
 import submitAnimation from "../lottieFiles/submitAnim.json";
 import loadingCircleAnimation from "../lottieFiles/loadingCircleAnim.json";
-import { db } from "../../firebase/firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
-import emailjs from "@emailjs/browser";
-
-const env = import.meta.env;
+import { handleContactFormSubmit } from "../../services/helpers";
 
 function ContactForm() {
   const [formLoad, setfromLoad] = useState(false);
@@ -33,44 +29,11 @@ function ContactForm() {
     },
   });
 
-  //db collection
-  const userCollectionRef = collection(db, "contacted-user");
-
-  //  Send email using EmailJS in the browser
-  const handleEmailjs = async (values) => {
-    const emailParams = {
-      from_name: values.name,
-      from_email: values.email,
-      from_mobile: values.mobile,
-      message: values.message,
-    };
-
-    await emailjs.send(
-      env.VITE_emailjs_serviceId,
-      env.VITE_emailjs_template_Id,
-      emailParams,
-      env.VITE_emailjs_publicKey
-    );
-  };
-
   const handleSubmit = async (values) => {
     try {
       setfromLoad(true);
 
-      const valuesToInsertInDB = {
-        name: values.name,
-        email: values.email,
-        mobile: values.mobile,
-        message: values.message,
-        createdAt: new Date().toLocaleString(),
-        updatedAt: new Date().toLocaleString(),
-      };
-
-      //save data to fire store
-      await addDoc(userCollectionRef, valuesToInsertInDB);
-
-      //emailjs
-      handleEmailjs(values);
+      await handleContactFormSubmit(values);
 
       //reset form and show/hide animation
       form.reset();
