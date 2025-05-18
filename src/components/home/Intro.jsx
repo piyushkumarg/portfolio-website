@@ -35,18 +35,16 @@ function Intro() {
               <span className="text-contentHighlight text-2xl font-semibold font-carattere tracking-widest">
                 Piyush Kumar
               </span>
-              , a Software Developer with over 1 year of professional
-              experience. Currently working as an{" "}
-              <span className="text-contentHighlight font-medium">
-                Associate Software Developer at Driffle
-              </span>
-              , where I engineer real-time marketing feeds and develop scalable
+              , a Software Engineer with over 2 year of professional experience.
+              in building and maintaining scalable web applications. I’m
+              currently working at Driffle as an Associate Software Developer,
+              where I focus on developing real-time systems and scalable backend
               solutions. Previously, I've contributed as a{" "}
               <span className="text-contentHighlight font-medium">
                 Full Stack Developer at Digilabs and Mediversal
               </span>
               , where I honed my skills in both frontend and backend
-              development. I've also successfully delivered{" "}
+              technologies. I've also successfully delivered{" "}
               <span className="text-contentHighlight font-medium">
                 10+ freelance projects
               </span>
