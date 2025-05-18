@@ -37,9 +37,9 @@ function Intro() {
               </span>
               , a Software Engineer with over 2 year of professional experience.
               in building and maintaining scalable web applications. I’m
-              currently working at Driffle as an Associate Software Developer,
-              where I focus on developing real-time systems and scalable backend
-              solutions. Previously, I've contributed as a{" "}
+              currently working at Driffle as a Software Engineer, where I focus
+              on developing real-time systems and scalable backend solutions.
+              Previously, I've contributed as a{" "}
               <span className="text-contentHighlight font-medium">
                 Full Stack Developer at Digilabs and Mediversal
               </span>
